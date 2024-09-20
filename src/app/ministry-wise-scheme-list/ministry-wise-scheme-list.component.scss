@@ -1,0 +1,285 @@
+.inner-bannerwrap {
+  padding: 0px 50px;
+  position: relative;
+  width: 100%;
+}
+
+.custom-tab .nav-link.active {
+  background: #575757;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0;
+}
+
+.headertitle {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  bottom: 24%;
+  left: 0;
+
+}
+
+
+
+
+
+
+
+.custom-tab .nav-item a {
+  display: block;
+  transition: 1.3s;
+  border: 0px;
+}
+
+
+.Scheme-wrapper {
+  padding: 60px 50px;
+  overflow: hidden;
+}
+
+.schemes-btn .nav-pills {
+  justify-content: center;
+}
+
+.schemes-btn .nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  background-color: #f7768d;
+  color: #fff;
+}
+
+.schemes-btn .nav-pills .nav-link {
+  border: 1px solid#f7768d;
+  color: #f7768d;
+  font-size: 16px;
+  margin-right: 20px;
+  height: 45px;
+}
+
+.formwarp-data {
+  position: relative;
+  padding: 30px 0px;
+}
+
+.Department {
+  padding: 0px 20px;
+}
+
+.Department h4 {
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.login-btn {
+  background: #575757;
+  color: #ffffff;
+  line-height: 40px;
+  width: 100%;
+}
+
+
+.groupfrom {
+  margin-bottom: 20px;
+}
+
+.leayergrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px 20px;
+}
+
+.education {
+  padding: 30px;
+  border: 1px solid #f7768d;
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 1px 2px 8px 0 rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.education h3 {
+  font-size: 16px;
+  color: #575757;
+  font-weight: 500;
+  margin: 0px;
+  line-height: normal;
+}
+
+
+.form-accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.5s;
+}
+
+.form-accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+.form-accordion .accordion-button::after {
+  transition: all 0.5s;
+}
+
+.form-accordion .accordion-header {
+  margin-bottom: 0px;
+}
+
+.form-accordion .accordion-button {
+  padding: 0px;
+  color: #000;
+  font-size: 16px;
+}
+
+.form-accordion .accordion-item {
+  border: 0px;
+}
+
+.form-accordion .accordion-button:focus {
+  box-shadow: none;
+  background: transparent;
+}
+
+.form-accordion .accordion-button:not(.collapsed) {
+  color: #000000;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.form-accordion .accordion-item {
+  margin-bottom: 10px;
+}
+
+.form-accordion .form-check {
+  display: flex;
+}
+
+
+.incentive .form-check .form-check-input {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #ccc;
+  margin: 2px 10px 0 -20px;
+}
+
+.incentive .form-check {
+  margin-bottom: 6px;
+}
+
+.incentive .form-check-input:checked {
+  background-color: #f7768d !important;
+  border-color: #f7768d !important;
+}
+
+.formcard-wer {
+  padding-left: 20px;
+}
+
+.formcard-show .accordion-item {
+  margin-bottom: 20px;
+  border: 1px solid#ccc;
+  border-radius: 10px !important;
+}
+
+.formcard-show .accordion-button {
+  margin: 0px;
+  padding: 10px 10px;
+  color: #000;
+  font-size: 16px;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-header {
+  margin-bottom: 0px;
+}
+
+.formcard-show {
+  position: relative;
+}
+
+.formcard-show h3 {
+  color: #575757;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.formcard-show h6 {
+  font-size: 16px;
+  color: #575757;
+  font-weight: 500;
+}
+
+.Councillist {
+  margin: 0px;
+}
+
+.accordion-body:hover {
+  box-shadow: 0px 10px 10px #b9b3b34d;
+  transition: 1.3s;
+}
+
+.Councillist span {
+  margin-right: 10px;
+}
+
+
+.cardform-Council h6 {
+  font-size: 16px;
+  color: #575757;
+  font-weight: 500;
+}
+
+.cardform-Council h3 {
+  color: #575757;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.cardform-Council {
+  padding-top: 30px;
+}
+
+
+
+.range-wrap {
+  position: relative;
+  margin: 0 auto 3rem;
+}
+
+.range {
+  width: 100%;
+}
+
+.bubble {
+  top: 20px;
+  background: #f7768d;
+  color: white;
+  padding: 4px 12px;
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #f7768d;
+  top: -2px;
+  left: 50%;
+}

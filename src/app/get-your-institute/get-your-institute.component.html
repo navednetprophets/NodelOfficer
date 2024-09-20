@@ -1,0 +1,286 @@
+<mat-dialog-content>
+  <main class="flex-shrink-0">
+
+    <div class="inner-banner-wrap">
+      <mat-dialog-actions class="justify-content-end">
+        <div>
+          <button mat-raised-button color="warn" mat-dialog-close tabindex="1">X</button>
+
+
+        </div>
+      </mat-dialog-actions>
+
+
+    </div>
+
+    <section class="pages-section">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="getyourinstititue-wrap">
+              <div class="nav flex-column nav-pills me-3 vertical-tabs" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+                <h5 style="font-size: 17px;">Institutes/ Schools on NSP </h5>
+                <button class="nav-link active" id="Search-by-name-tab" data-bs-toggle="pill"
+                  data-bs-target="#Search-by-name" type="button" role="tab" aria-controls="Search-by-name"
+                  aria-selected="true"> Search by Name</button>
+                <button class="nav-link" id="search-by-aishe-tab" data-bs-toggle="pill"
+                  data-bs-target="#search-by-aishe" type="button" role="tab" aria-controls="search-by-aishe"
+                  aria-selected="false">Search by AISHE/ ITI (NCVT)
+                </button>
+                <button class="nav-link" id="search-by-dise-tab" data-bs-toggle="pill" data-bs-target="#search-by-dise"
+                  type="button" role="tab" aria-controls="search-by-dise" aria-selected="false">Search by UDISE Code
+                </button>
+              </div>
+
+              <div class="tab-content vertical-tab-content w-sm-100" id="v-pills-tabContent" [formGroup]="formSubmit"
+                style="overflow: hidden !important;">
+                <div class="tab-pane fade show active" id="Search-by-name" role="tabpanel"
+                  aria-labelledby="Search-by-name-tab" tabindex="0">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-card p-0 mt-3">
+                        <div class="row align-items-top" id="msformNew">
+                          <div class="col-md-3">
+                            <label class="form-label">State</label>
+                            <mat-form-field appearance="outline" class="my-required-field">
+                              <mat-select class="form-control req" formControlName="state" required
+                                (selectionChange)="loadDistrct($event.value)">
+                                <mat-option value="">Select State</mat-option>
+                                <mat-option *ngFor="let items of state" [value]="items.state_id">
+                                  {{ items.state_name }}
+                                </mat-option>
+                              </mat-select>
+
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                            <label class="form-label">District</label>
+                            <mat-form-field appearance="outline" class="my-required-field">
+                              <mat-select class="form-control" formControlName="district" required>
+                                <mat-option value="">Select District</mat-option>
+                                <mat-option *ngFor="let items of filterdDistrict " [value]="items.district_id">
+                                  {{items.district_name}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+
+                          <div class="col-md-3">
+                            <label class="form-label">Institute Name</label>
+                            <mat-form-field class="w-100" appearance="outline">
+                              <input matInput class="form-control" placeholder="Enter Institute name"
+                                (input)="onInputChange1($event)" formControlName="instituteName" #input class="mt-2">
+                            </mat-form-field>
+                          </div>
+
+                          <div class="col-md-3 d-flex align-items-end flex-column">
+                            <label class="form-label">&nbsp;</label>
+                            <button mat-raised-button color="primary" class="btn-blue-one"
+                              (click)="searchName(formSubmit)">
+                              Search</button>
+                          </div>
+
+                          <ng-container *ngIf="responseData">
+
+                            <div class="col-md-2 d-flex align-items-end flex-column">
+                              <label class="form-label">&nbsp;</label>
+                              <button color="info" class="btn btn-success" *ngIf="radioChecked"
+                                (click)="getSelectedData()">Click here to select Institute</button>
+                            </div>
+                          </ng-container>
+
+                        </div>
+                        <div class="table-responsive mt-4 table-scrollbar">
+
+
+                          <table class="table table-striped" mat-table [dataSource]="dataSource" matSort>
+                            <ng-container matColumnDef="sn">
+                              <th mat-header-cell *matHeaderCellDef>Select</th>
+                              <td mat-cell *matCellDef="let element">
+                                <mat-radio-button [value]="element" (change)="getValue(element)"></mat-radio-button>
+                              </td>
+
+                            </ng-container>
+                            <ng-container matColumnDef="aisheCode">
+                              <th mat-header-cell *matHeaderCellDef>AISHE/ UDISE/ ITI (NCVT) Code</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ element?.aisheCode }}
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="instituteName">
+                              <th mat-header-cell *matHeaderCellDef>Institute Name</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ element?.instituteName }}
+                              </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="instituteState">
+                              <th mat-header-cell *matHeaderCellDef>State</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ stateName ??'' }}
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="instituteDistrict">
+                              <th mat-header-cell *matHeaderCellDef>District</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ districtName ??'' }}
+                              </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="address">
+                              <th mat-header-cell *matHeaderCellDef>Address</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ element?.address }}
+                              </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                          </table>
+                        </div>
+                        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                          aria-label="Select page">
+                        </mat-paginator>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="search-by-aishe" role="tabpanel" aria-labelledby="search-by-aishe-tab"
+                  tabindex="0">
+
+                  <div class="row">
+
+                    <div class="col-md-12">
+                      <div class="form-card p-0 mt-3">
+                        <div class="row align-items-center exClass" id="msformNew">
+                          <div class="col-md-5">
+                            <label class="form-label">AISHE/ITI(NCVT) Code</label>
+                            <input class="form-control auto-capitalization" (input)="onInputChange($event)"
+                              placeholder="AISHE/ITI(NCVT) Code" formControlName="aishecode"
+                              style="border-radius: 4px;" />
+                          </div>
+                          <div class="col-md-2 d-flex flex-column align-items-end">
+                            <label class="form-label">&nbsp;</label>
+                            <button mat-raised-button color="primary" class="btn-blue-one"
+                              (click)="aisheCodeSearch(formSubmit)"> Search</button>
+                          </div>
+
+
+                        </div>
+
+                        <div class="table-responsive mt-4">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Select</th>
+                                <th>AISHE/ UDISE/ ITI (NCVT) Code</th>
+                                <th>Institute Name</th>
+                                <!-- <th>Institute ID</th> -->
+                                <th> State</th>
+                                <th> District</th>
+
+                                <th>Address</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let element of aisheCodeList">
+                                <td>
+                                  <mat-radio-button [value]="element" (change)="getValue(element)"></mat-radio-button>
+                                </td>
+                                <td class="border-bottom-0"> {{ element.aisheCode }}</td>
+                                <td class="border-bottom-0">{{ element.instituteName }}</td>
+                                <td class="border-bottom-0"> {{ element.stateName }}</td>
+                                <td class="border-bottom-0"> {{ element.districtName }}</td>
+
+                                <td class="border-bottom-0">{{element.address}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end flex-column" *ngIf="responseaAisheCode">
+                          <label class="form-label">&nbsp;</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="search-by-dise" role="tabpanel" aria-labelledby="search-by-dise-tab"
+                  tabindex="0">
+
+                  <div class="row">
+
+                    <div class="col-md-12">
+                      <div class="form-card p-0 mt-3">
+                        <div class="row align-items-center exClass" id="msformNew">
+                          <div class="col-md-4">
+                            <label class="form-label">UDISE Code</label>
+                            <input class="form-control" maxlength="11" minlength="1" placeholder="UDISE Code"
+                              formControlName="udiseCode" style="border-radius: 4px;" />
+                          </div>
+
+                          <div class="col-md-2 d-flex flex-column align-items-end">
+                            <label class="form-label">&nbsp;</label>
+                            <button mat-raised-button color="primary" class="btn-blue-one"
+                              (click)="udiseCodeSearch(formSubmit)">
+                              Search</button>
+                          </div>
+                        </div>
+                        <div class="table-responsive mt-4">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Select</th>
+                                <th>AISHE/ UDISE/ ITI (NCVT) Code</th>
+                                <th>Institute Name</th>
+
+                                <th>State</th>
+                                <th>District</th>
+
+                                <th>Address</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let element of udiseCodeList">
+                                <td>
+                                  <mat-radio-button [value]="element" (change)="getValue(element)"></mat-radio-button>
+                                </td>
+                                <td class="border-bottom-0"> {{ element.aisheCode }}</td>
+                                <td class="border-bottom-0">{{ element.instituteName }}</td>
+                                <td class="border-bottom-0">{{ element.stateName }}</td>
+
+                                <td class="border-bottom-0">{{ element.districtName }}</td>
+
+                                <td class="border-bottom-0">{{element.address}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end flex-column" *ngIf="responseaUdiseCode">
+                          <label class="form-label">&nbsp;</label>
+                          <button mat-raised-button color="primary" class="btn-blue"
+                            (click)="getSelectedData()">Select</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+</mat-dialog-content>

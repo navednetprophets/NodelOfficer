@@ -1,0 +1,174 @@
+.inner-banner-wrap {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.inner-banner-wrap button {
+  padding: 0;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.pages-section {
+  padding: 30px 0;
+}
+
+.vertical-tabs .nav-link.active {
+  padding-left: 8px;
+}
+
+.getyourinstititue-wrap {
+  display: flex;
+}
+
+.mat-mdc-select {
+  border-radius: 0;
+}
+
+.btn-blue-one {
+  width: 100%;
+  height: 36px;
+  background: rgb(247, 118, 141);
+  background: linear-gradient(90deg, rgba(247, 118, 141, 1) 50%, rgba(233, 115, 167, 1) 100%);
+  // margin-top: 6px;
+}
+
+.btn-blue {
+  width: 100%;
+  height: 40px;
+}
+
+.mat-mdc-dialog-content {
+  max-height: none;
+  // overflow: hidden;
+}
+
+.exClass input:focus {
+  border: 2px solid #3f51b5;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 38px !important;
+}
+
+::ng-deep .mat-mdc-select {
+  border: none;
+}
+
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+  font-size: 14px;
+  height: 28px !important;
+}
+
+::ng-deep .mat-mdc-select-trigger {
+  height: 27px !important;
+}
+
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input {
+  height: 25px !important;
+  padding: 0;
+}
+
+
+
+@media (max-width: 1440px) {
+  .mat-mdc-dialog-content {
+    overflow-y: scroll;
+    padding: 15px;
+  }
+
+  .vertical-tabs h5,
+  .form-label,
+  mat-label {
+    font-size: 14px !important;
+  }
+
+  .vertical-tabs .nav-link {
+    font-size: 12px;
+    line-height: 35px;
+    width: auto;
+  }
+
+  .mat-mdc-dialog-actions {
+    min-height: 32px;
+    padding: 0;
+  }
+
+  .inner-banner-wrap button {
+    min-width: 30px;
+    height: 30px;
+  }
+
+  div#msformNew .mat-mdc-form-field {
+    width: 100%;
+  }
+}
+
+
+
+
+
+@media (max-width: 1390px) {}
+
+
+
+
+
+@media (max-width: 1024px) {
+  .getyourinstititue-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .btn-blue {
+    width: 75px;
+  }
+
+  .mdc-data-table__header-cell {
+    font-size: 12px;
+  }
+
+
+
+  div#cdk-overlay-0 {
+    width: 100% !important;
+  }
+
+  .cdk-global-overlay-wrapper {
+    display: block !important;
+  }
+
+  .cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: 100% !important;
+  }
+
+  .getyourinstititue-wrap {
+    display: block;
+  }
+
+
+  .vertical-tabs[_ngcontent-ng-c1822360950] .nav-link[_ngcontent-ng-c1822360950] {
+    width: 50%;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+  }
+
+
+}
+
+
+@media (max-width:767.98px) {
+
+  .vertical-tabs[_ngcontent-ng-c1822360950] .nav-link[_ngcontent-ng-c1822360950] {
+    width: 100%;
+  }
+
+  div#v-pills-tab {
+    margin-right: 0px !important;
+  }
+}

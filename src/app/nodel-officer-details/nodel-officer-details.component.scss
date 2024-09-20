@@ -1,0 +1,158 @@
+.mat-mdc-radio-button~.mat-mdc-radio-button {
+  margin-left: 16px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: black;
+  background-color: transparent;
+}
+
+
+.custom-btn {
+  background: #575757 !important;
+  color: white !important;
+}
+
+.login-btn {
+  background: #575757;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input {
+  height: 42px !important;
+  padding: 0;
+}
+
+::ng-deep .mat-datepicker-content {
+  max-height: 400px !important;
+}
+
+mat-form-field {
+  background-color: #ffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 40px;
+}
+
+.custom_btn {
+  background: rgb(247, 118, 141);
+  background: linear-gradient(90deg, rgba(247, 118, 141, 1) 50%, rgba(233, 115, 167, 1) 100%);
+}
+
+::ng-deep .mat-mdc-select-arrow-wrapper {
+  height: 43px !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 42px !important;
+}
+
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+  font-size: 14px;
+  height: 30px !important;
+}
+
+.captcha img {
+  padding-left: 8px;
+}
+
+.refresh-captcha {
+  padding-left: 22px;
+}
+
+.refresh-captcha img {
+  cursor: pointer;
+}
+
+.exClass textarea {
+  height: 80px !important;
+}
+
+.exClass textarea:focus {
+  border: 2px solid #3f51b5;
+}
+
+.exClass input:focus {
+  border: 2px solid #3f51b5;
+}
+
+.header-title {
+  font-family: auto;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  /* color: #ffffff; */
+  margin: 0;
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+  /* background: #ef759c; */
+  width: 200px;
+  line-height: 70px;
+  /* padding: 0 15px; */
+}
+
+.guidline {
+  margin-left: 40px;
+  font-weight: 700;
+}
+
+.guidline a {
+  text-decoration: none;
+}
+
+.schem_name .mat-mdc-select {
+  font-size: 12px !important;
+}
+
+.form-warp.custom_color.mb-4.p-2 {
+  padding: 15px !important;
+}
+
+.mat-mdc-option.mdc-list-item {
+  border-bottom: 1px solid #ccc;
+}
+
+
+.check-eligibility button.btn.rounded-0.login-btn {
+  margin-left: 16px;
+}
+
+.public-bg {
+  background: rgba(54, 170, 201, 1);
+  background: linear-gradient(90deg, rgba(54, 170, 201, 1) 50%, rgba(108, 137, 186, 1) 100%);
+}
+
+.form-check-input:checked {
+  background-color: #36aac9 !important;
+  border-color: #36aac9 !important;
+}
+
+.nodal-officer h3 {
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+select {
+  border: 2px solid #e7e7e7;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.captcha-input input {
+  border: 2px solid #e7e7e7;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.table_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

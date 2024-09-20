@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/css/nsp-style.css";
+@import "./assets/css/responsive.css";
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::ng-deep .mat-mdc-option.mdc-list-item {
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px groove !important;
+}
+
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(229, 228, 228, 0.9);
+  z-index: 10000;
+}
+
+.green:before {
+  background: url("assets/images/icons/check_status.svg") !important;
+  background-color: white !important;
+  content: "" !important;
+  color: #000000;
+  background-position: center !important;
+  background-size: 20px !important;
+}
+
+
+@media (max-width: 991.98px) {
+  div#cdk-overlay-0 {
+    max-width: 100% !important;
+  }
+
+
+}

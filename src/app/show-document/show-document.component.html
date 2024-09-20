@@ -1,0 +1,54 @@
+<mat-dialog-content>
+  <main class="flex-shrink-0">
+
+    <div class="inner-banner-wrap">
+      <mat-dialog-actions class="justify-content-end">
+        <div>
+          <button mat-raised-button color="warn" mat-dialog-close tabindex="1">X</button>
+        </div>
+      </mat-dialog-actions>
+      <div class="row formGroup">
+        <div class="col-md-8">
+          <!-- <h2 style="float: inline-start">Upload Document(s)</h2> -->
+        </div>
+        <div class="upload-wrap">
+          <fieldset>
+            <div class="form-warp mt-3">
+              <h3 class="form-header text-start">Upload/ Link Document(s)
+              </h3>
+              <span style="color:rgb(6, 6, 110) ; padding: 0 15px ;font-size: 15px; display: block;">
+                <!-- <strong>Note: Document should be in pdf/ jpg/ jpeg format and file size must be in between 20kb to 200kb
+                </strong> -->
+              </span>
+              <div class=" form-card" id="upload-document">
+                <ul>
+                  @for (item of displayDocList; track item.id; let i = $index) {
+                  <li>
+                    <span class="mx-3"><b>{{i+1}}-</b></span>
+                    <span class="doc_name">{{ item.doc_name }}</span>
+                    <div class="upload-wrap">
+
+                      <span *ngIf="item.is_mandatory==true && item.doc_format_path===null" style="color: red;">
+                        <img src="assets/images/icons/mandatory.jpeg" height="24" alt=""
+                          title="This document is mandatory">
+                      </span>
+                    </div>
+
+                  </li>
+                  } @empty {
+                  <li style="color: red">No record found</li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+</mat-dialog-content>
