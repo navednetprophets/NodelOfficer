@@ -214,8 +214,7 @@ export class NodelOfficerDetailsComponent implements OnInit {
       this._alert.swalPopError('Please Fill Required Fields.');
       this.formSubmit.markAllAsTouched();
       return;
-    }else{
-      alert(90)
+    } else {
       this.loaderService.showLoader();
       let payload = {
         captchaId: this.captchaId,
@@ -228,7 +227,6 @@ export class NodelOfficerDetailsComponent implements OnInit {
           next: (res: any) => {
             this.loaderService.hideLoader();
             if (res.body.status === 1) {
-              alert('submit call')
               this.submitForm();
             } else {
               this._alert.swalPopError('Invalid Captcha');
@@ -266,7 +264,6 @@ export class NodelOfficerDetailsComponent implements OnInit {
   }
 
   submitForm() {
-    alert('done')
     // console.log("Form=>", this.formSubmit.value)
     this.loaderService.showLoader();
     const payload = {
@@ -286,11 +283,11 @@ export class NodelOfficerDetailsComponent implements OnInit {
       .pipe(takeUntil(this.unSubscribe))
       .subscribe({
         next: (res: any) => {
-         this.formSubmit.get('ministry')?.reset();
-         this.formSubmit.get('scheme')?.reset();
-         this.formSubmit.get('state')?.reset();
-         this.formSubmit.get('district')?.reset();
-         this.formSubmit.get('zone')?.reset();
+          this.formSubmit.get('ministry')?.reset();
+          this.formSubmit.get('scheme')?.reset();
+          this.formSubmit.get('state')?.reset();
+          this.formSubmit.get('district')?.reset();
+          this.formSubmit.get('zone')?.reset();
           this.generateCaptchaImage();
           // console.log("RES",res)
           this.loaderService.hideLoader();
@@ -331,19 +328,19 @@ export class NodelOfficerDetailsComponent implements OnInit {
       this.state = false
       this.district = false
       this.zone = false
-    }else if(this.radioVal == 'S'){
+    } else if (this.radioVal == 'S') {
       this.ministry = true
       this.scheme = true
       this.state = true
       this.district = false
       this.zone = false
-    }else if(this.radioVal == 'D'){
+    } else if (this.radioVal == 'D') {
       this.ministry = true
       this.scheme = true
       this.state = true
       this.district = true
       this.zone = false
-    }else if(this.radioVal == 'Z'){
+    } else if (this.radioVal == 'Z') {
       this.ministry = false
       this.scheme = false
       this.state = false
@@ -353,7 +350,7 @@ export class NodelOfficerDetailsComponent implements OnInit {
   }
 
 
-  hideTable(){
+  hideTable() {
     this.showTable = false
   }
 
