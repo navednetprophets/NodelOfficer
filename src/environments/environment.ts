@@ -6,7 +6,7 @@ export const environment = {
 
   //dev
 
-  nspHomePageApiUrl : 'http://10.247.138.26:8082/homepageapi/',
+  nspHomePageApiUrl: 'http://10.247.138.26:8082/homepageapi/',
 
   nspApiUrlFresh: 'http://10.247.138.26:8082/NspApiFresh/',
   nspRegUrl: 'http://10.247.138.26/otrappstaging/',

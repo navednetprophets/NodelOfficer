@@ -532,25 +532,30 @@
       </div>
       <div class="col-md-12  mb-4">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal" name="radioBtnVal" id="ministryHideShow" value="M" checked>
+          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal"
+            name="radioBtnVal" id="ministryHideShow" value="M" checked>
           <label class="form-check-label" for="ministryHideShow">Ministry</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal" name="radioBtnVal" id="stateHideShow" value="S">
+          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal"
+            name="radioBtnVal" id="stateHideShow" value="S">
           <label class="form-check-label" for="stateHideShow">State</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal" name="radioBtnVal" id="districtHideShow" value="D">
+          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal"
+            name="radioBtnVal" id="districtHideShow" value="D">
           <label class="form-check-label" for="districtHideShow">District</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal" name="radioBtnVal" id="zoneHideShow" value="Z">
+          <input class="form-check-input" type="radio" (change)="getRadioBtnVal($event)" formControlName="radioBtnVal"
+            name="radioBtnVal" id="zoneHideShow" value="Z">
           <label class="form-check-label" for="zoneHideShow">Zone</label>
         </div>
       </div>
       <div *ngIf="ministry">
         <h3 class="fw-bold">Select Ministry</h3>
-        <select (change)="loadScheme($event)" formControlName="ministry" class="form-select" aria-label="Default select example">
+        <select (change)="loadScheme($event)" formControlName="ministry" class="form-select"
+          aria-label="Default select example">
           <option selected>Choose your option</option>
           <option *ngFor="let option of ministryList" value="{{option.ministry_id}}">{{option.ministry_name}}</option>
         </select>
@@ -566,7 +571,8 @@
 
       <div *ngIf="state">
         <h3 class="fw-bold">State</h3>
-        <select (change)="loadDistrct($event)"  formControlName="state" class="form-select" aria-label="Default select example">
+        <select (change)="loadDistrct($event)" formControlName="state" class="form-select"
+          aria-label="Default select example">
           <option selected>Choose your option</option>
           <option *ngFor="let option of stateList" value="{{option.state_id}}">{{option.state_name}}</option>
         </select>
@@ -603,8 +609,7 @@
               </div>
               <div class="col-md-2">
                 <div class="refresh-captcha">
-                  <img src="assets/images/icons/refresh.svg" height="35" width="35"
-                    (click)="generateCaptchaImage()" />
+                  <img src="assets/images/icons/refresh.svg" height="35" width="35" (click)="generateCaptchaImage()" />
                 </div>
               </div>
             </div>
@@ -612,8 +617,8 @@
 
           <div class="col-md-12 captcha-input" style="margin-top: 8px">
             <h4 class="fw-bold mt-2">Enter Captcha Code *</h4>
-            <input type="text" formControlName="captchaText" class="form-control fw-bold"
-              placeholder="Enter Captcha" matInput />
+            <input type="text" formControlName="captchaText" class="form-control fw-bold" placeholder="Enter Captcha"
+              matInput />
           </div>
           <div *ngIf="formSubmit.controls['captchaText']?.touched && formSubmit.controls['captchaText']?.invalid">
             <span style="color: red; font-size: 13px; font-weight: 600;"
@@ -930,37 +935,37 @@
 
 
 <ng-container *ngIf="showTable">
-<div class="tableview mt-5">
-  <div class="container">
-    <table class="table table-hover table-bordered">
-      <thead>
-        <tr class="table-secondary">
-          <th align="center">S.No</th>
-          <th align="center"><b>Nodal Officer Name</b></th>
-          <th align="center"><b>Email-Id</b></th>
-          <th align="center"><b>Telephone-No</b></th>
-          <th align="center"><b>Address</b></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of ministryWiseNodalDetails let i = index" bgcolor="#FFFFFF">
-          <td align="center">{{i + 1}}</td>
-          <td> {{data.name}}</td>
-          <td> {{data.email}}</td>
-          <td> {{data.mobileNo}}</td>
-          <td> {{data.address}}</td>
+  <div class="tableview mt-5">
+    <div class="container">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="table-secondary">
+            <th align="center">S.No</th>
+            <th align="center"><b>Nodal Officer Name</b></th>
+            <th align="center"><b>Email-Id</b></th>
+            <th align="center"><b>Telephone-No</b></th>
+            <th align="center"><b>Address</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of ministryWiseNodalDetails let i = index" bgcolor="#FFFFFF">
+            <td align="center">{{i + 1}}</td>
+            <td> {{data.name}}</td>
+            <td> {{data.email}}</td>
+            <td> {{data.mobileNo}}</td>
+            <td> {{data.address}}</td>
 
-        </tr>
+          </tr>
 
 
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-<div class="table_btn" *ngIf="hideTableBtn">
-  <button (click)="hideTable()" class="btn btn-primary">OK</button>
-</div>
+  <div class="table_btn" *ngIf="hideTableBtn">
+    <button (click)="hideTable()" class="btn btn-primary">OK</button>
+  </div>
 </ng-container>
 
 
