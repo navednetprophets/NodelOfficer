@@ -4,6 +4,7 @@ export const environment = {
   baseUrl: 'https://scholarships.gov.in/nodelOfficerDetails/',
   nspApiUrl: 'https://scholarships.gov.in/NspApiFresh/',
   nspApiUrlFresh: 'https://scholarships.gov.in/NspApiFresh/',
+  nspHomePageApiUrl: 'https://scholarships.gov.in/homepageapi/',
 
   //for local
   fileUrl: '',

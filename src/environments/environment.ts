@@ -31,7 +31,7 @@ export const environment1 = {
   nspApiUrlFresh: 'https://scholarships.gov.in/NspApiFresh/',
 
 
-  // nspHomePageApiUrl: '',
+  nspHomePageApiUrl: 'https://scholarships.gov.in/homepageapi/',
 
   //for local
   fileUrl: '',
