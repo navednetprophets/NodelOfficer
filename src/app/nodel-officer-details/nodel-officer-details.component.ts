@@ -283,12 +283,12 @@ export class NodelOfficerDetailsComponent implements OnInit {
       .pipe(takeUntil(this.unSubscribe))
       .subscribe({
         next: (res: any) => {
-          this.formSubmit.get('ministry')?.reset();
-          this.formSubmit.get('scheme')?.reset();
-          this.formSubmit.get('state')?.reset();
-          this.formSubmit.get('district')?.reset();
-          this.formSubmit.get('zone')?.reset();
-          this.generateCaptchaImage();
+          // this.formSubmit.get('ministry')?.reset();
+          // this.formSubmit.get('scheme')?.reset();
+          // this.formSubmit.get('state')?.reset();
+          // this.formSubmit.get('district')?.reset();
+          // this.formSubmit.get('zone')?.reset();
+          // this.generateCaptchaImage();
           // console.log("RES",res)
           this.loaderService.hideLoader();
           if (res.data) {
