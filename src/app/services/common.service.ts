@@ -148,11 +148,11 @@ export class CommonService {
 
 
 
+  // Home Page Api's
 
 
 
 
-  
 
   districtWiseNodalOfficerList(data: any) {
     return this.http.post(`${environment.nspHomePageApiUrl}getDistrictNodelOfficerDetailsList`, {

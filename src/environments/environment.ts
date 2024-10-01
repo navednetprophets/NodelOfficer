@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  staging: false,
+  staging: true,
   baseUrl: 'http://localhost:4200',
   nspApiUrl: 'http://10.247.138.26:8082/NspApiFreshdev/',
 
@@ -25,6 +25,7 @@ export const environment = {
 };
 export const environment1 = {
   production: true,
+  staging: false,
 
   baseUrl: 'https://scholarships.gov.in/nodelOfficerDetails/',
   nspApiUrl: 'https://scholarships.gov.in/NspApiFresh/',
