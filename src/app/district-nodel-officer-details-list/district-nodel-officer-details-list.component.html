@@ -529,7 +529,9 @@
         <div class="col-lg-12">
           <div>
             <h3 class="fw-bold">State</h3>
-            <select (change)="loadDistrct($event)" formControlName="state" class="form-select"
+            <select
+              [ngClass]="{'border-red':formSubmit.get('state')?.touched && formSubmit.get('state')?.invalid, 'border-green':formSubmit.get('state')?.touched && formSubmit.get('state')?.valid}"
+              (change)="loadDistrct($event)" formControlName="state" class="form-select"
               aria-label="Default select example">
               <option selected>Choose your option</option>
               <option *ngFor="let option of stateList" value="{{option.state_id}}">{{option.state_name}}</option>
@@ -544,7 +546,9 @@
         <div class="col-lg-12">
           <div>
             <h3 class="fw-bold">District</h3>
-            <select (change)="getDistrictId($event)" formControlName="district" class="form-select"
+            <select
+              [ngClass]="{'border-red':formSubmit.get('district')?.touched && formSubmit.get('district')?.invalid, 'border-green':formSubmit.get('district')?.touched && formSubmit.get('district')?.valid}"
+              (change)="getDistrictId($event)" formControlName="district" class="form-select"
               aria-label="Default select example">
               <option selected>Choose your option</option>
               <option *ngFor="let option of filterdDistrict" value="{{option.district_id}}">{{option.district_name}}
@@ -578,7 +582,9 @@
 
             <div class="col-md-12 captcha-input" style="margin-top: 8px">
               <h4 class="fw-bold mt-2">Enter Captcha Code *</h4>
-              <input type="text" class="form-control fw-bold" formControlName="captchaText" placeholder="Enter Captcha"
+              <input
+                [ngClass]="{'border-red':formSubmit.get('captchaText')?.touched && formSubmit.get('captchaText')?.invalid, 'border-green':formSubmit.get('captchaText')?.touched && formSubmit.get('captchaText')?.valid}"
+                type="text" class="form-control fw-bold" formControlName="captchaText" placeholder="Enter Captcha"
                 matInput />
             </div>
             <div *ngIf="formSubmit.controls['captchaText']?.touched && formSubmit.controls['captchaText']?.invalid">

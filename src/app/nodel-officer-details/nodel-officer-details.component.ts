@@ -297,6 +297,7 @@ export class NodelOfficerDetailsComponent implements OnInit {
             this.ministryWiseNodalDetails = data
             this.showTable = true
             this.hideTableBtn = true
+            // this.scrollBottom();
             // console.log("Finalk",this.ministryWiseNodalDetails)
           } else if (res.data === null && res.status === false) {
             this.showTable = false
